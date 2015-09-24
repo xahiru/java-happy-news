@@ -17,7 +17,11 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/happynews/*</url-pattern>
+        <url-pattern>*.do</url-pattern>
+        <!-- <url-pattern>/happy/*.htm</url-pattern>
+        <url-pattern>/happy/*.jsp</url-pattern>
+        <url-pattern>/happy/*.jason</url-pattern>
+        <url-pattern>/happy/*.xml</url-pattern> -->
     </servlet-mapping>
   
   
