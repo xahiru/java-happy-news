@@ -9,6 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -17,11 +18,9 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.do</url-pattern>
-        <!-- <url-pattern>/happy/*.htm</url-pattern>
-        <url-pattern>/happy/*.jsp</url-pattern>
-        <url-pattern>/happy/*.jason</url-pattern>
-        <url-pattern>/happy/*.xml</url-pattern> -->
+        <url-pattern>/happynews/*</url-pattern>
+        
+       
     </servlet-mapping>
   
   
