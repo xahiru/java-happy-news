@@ -56,6 +56,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.36</version>
 		</dependency>
+		
+		<dependency>
+		<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 
 
@@ -68,9 +74,9 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.5.1.RELEASE</version>
+			<version>1.9.0.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-core</artifactId>
@@ -163,7 +169,7 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-		
+
 		<!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, 
 			and iBatis. (depends on spring-core, spring-beans, spring-context, spring-tx) 
 			Define this if you need ORM (org.springframework.orm.*) -->
@@ -232,6 +238,13 @@
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.2.1</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<!-- Only bundled with java 1.6+ -->
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 

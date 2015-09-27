@@ -39,7 +39,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href='<spring:url value="/"/>'>Home</a></li>
 						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="<spring:url value="/happynews/users.html"/>">Users</a></li>
 						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -55,10 +55,10 @@
 		</nav>
 		<tiles:insertAttribute name="body" />
 		<br> <br>
-		<center>
+		
 			<tiles:insertAttribute name="footer" />
 
-		</center>
+		
 	</div>
 </body>
 </html>

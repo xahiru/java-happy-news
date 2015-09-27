@@ -6,6 +6,7 @@
 </head>
 <body>hello world c
 
+<a href="/happynews/index.html">go to spring</a>
 
 </body>
 </html>
