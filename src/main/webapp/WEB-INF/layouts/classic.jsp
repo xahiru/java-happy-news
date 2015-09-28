@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tiles-x" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,7 @@
 <title><tiles:getAsString name="title" /></title>
 </head>
 <body>
+<tiles-x:useAttribute name="current"/>
 	<div class="container">
 		<!-- Static navbar -->
 		<nav class="navbar navbar-default">
@@ -37,9 +39,10 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href='<spring:url value="/"/>'>Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="<spring:url value="/happynews/users.html"/>">Users</a></li>
+						<li class="${current == 'index'? 'active':'' }"><a href='<spring:url value="/happynews/index"/>'>Home</a></li>
+						
+						<li><a href="/">About</a></li>
+						<li class="${current == 'users'? 'active':'' }"><a href="<spring:url value="/happynews/users.html"/>">Users</a></li>
 						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
