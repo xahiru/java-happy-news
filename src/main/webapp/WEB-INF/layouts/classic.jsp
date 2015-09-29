@@ -43,6 +43,7 @@
 						
 						<li><a href="/">About</a></li>
 						<li class="${current == 'users'? 'active':'' }"><a href="<spring:url value="/happynews/users.html"/>">Users</a></li>
+						<li class="${current == 'register'? 'active':'' }"><a href="<spring:url value="/happynews/register.html"/>">Register</a></li>
 						
 					</ul>
 					<ul class="nav navbar-nav navbar-right">

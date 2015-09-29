@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
-		<entity-name>xom.xahiru.happynews.entity.User</entity-name>
+		<entity-name>xom.xahiru.happynews.entity.Role</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>206</entity-height>
-		<entity-X-Coordinate>323</entity-X-Coordinate>
-		<entity-Y-Coordinate>308</entity-Y-Coordinate>
+		<entity-height>146</entity-height>
+		<entity-X-Coordinate>80</entity-X-Coordinate>
+		<entity-Y-Coordinate>338</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>xom.xahiru.happynews.entity.Role</entity-name>
+		<entity-name>xom.xahiru.happynews.entity.User</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>146</entity-height>
-		<entity-X-Coordinate>80</entity-X-Coordinate>
-		<entity-Y-Coordinate>338</entity-Y-Coordinate>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>442</entity-X-Coordinate>
+		<entity-Y-Coordinate>282</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
