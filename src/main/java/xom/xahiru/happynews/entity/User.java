@@ -10,8 +10,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.Proxy;
-
 
 @Entity
 public class User {
