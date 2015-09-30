@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.URL;
 
 @Entity
 public class Item {
@@ -16,13 +19,17 @@ public class Item {
 	@GeneratedValue
 	private Integer id;
 	
-	
+	@Size(min=5, message="invalid message, should be more than 5 chars")
 	private String title;
 	
 	@Column(name="published_date")
 	private Date publishedDate ;
 	
+	@Size(min=5, message="invalid description, should be more than 5 chars")
 	private String description;
+
+	@Size(min=3)
+	@URL(message="invalid link")
 	private String link;
 	
 	@ManyToOne

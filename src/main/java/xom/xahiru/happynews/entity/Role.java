@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Role {
@@ -14,6 +15,7 @@ public class Role {
 	@GeneratedValue
 	private Integer id;
 	
+	@Size(min=3, message="invalid name, should be more than 3 chars")
 	private String name;
 	
 	@ManyToMany(mappedBy="roles")
