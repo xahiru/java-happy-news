@@ -27,57 +27,14 @@ public class UserController {
 	@Autowired
 	private BlogService blogService;
 
-	@ModelAttribute("user")
-	public User constructUser() {
-		return new User();
-	}
 
 	@ModelAttribute("blog")
 	public Blog constructBlog() {
 		return new Blog();
 	}
 
-	@RequestMapping("/users")
-	public String users(Model model) {
+	
 
-		model.addAttribute("users", userService.getAllUsers());
-
-		return "users";
-	}
-
-	@RequestMapping("/users/{id}")
-	public String users(Model model, @PathVariable int id) {
-
-		model.addAttribute("user", userService.fingUserWithBlogs(id));
-
-		return "user-detail";
-	}
-
-	@RequestMapping("/register")
-	public String registerUser() {
-
-		return "user-register";
-	}
-
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String doRegisterUser(@Valid @ModelAttribute("user") User user,BindingResult result) {
-
-		if (result.hasErrors()) {
-
-			return "user-register";
-		}
-		userService.save(user);
-
-		return "redirect:/happynews/register.html?success=true";
-
-		// return safeRedirect("user-register.html?success=true");
-	}
-
-	// public static RedirectView safeRedirect(String url) {
-	// RedirectView rv = new RedirectView(url);
-	// rv.setExposeModelAttributes(false);
-	// return rv;
-	// }
 
 	@RequestMapping("/account")
 	public String account(Model model, Principal principal) {
@@ -86,7 +43,7 @@ public class UserController {
 
 		model.addAttribute("user", userService.fingUserWithBlogs(name));
 
-		return "user-detail";
+		return "account";
 	}
 
 	@RequestMapping(value = "/account", method = RequestMethod.POST)
@@ -114,18 +71,5 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = "/user/remove/{id}")
-
-	public String removeUser(@PathVariable int id) {
-		// public String removeBlog(@ModelAttribute("blog") Blog blog, Principal
-		// principal){
-
-		// String name = principal.getName();
-
-		userService.delete(id);
-
-		return "redirect:/happynews/users.html";
-
-	}
 
 }

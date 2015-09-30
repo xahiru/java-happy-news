@@ -53,7 +53,7 @@
 								href="<spring:url value="/happynews/login.html"/>">Login</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-							<li class="${current == 'users'? 'active':'' }"><a
+							<li class="${current == 'account'? 'active':'' }"><a
 							href="<spring:url value="/happynews/account.html"/>">My Account</a></li>
 				
 							<li><a href="<spring:url value="/logout"/>">Logout</a></li>

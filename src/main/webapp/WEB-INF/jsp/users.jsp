@@ -29,7 +29,7 @@ $(document).ready(function(){
 						href="<spring:url value="/happynews/users/${user.id}.html"/>"><c:out value="${user.name}"/> </a>
 					</td>
 					<td>
-					<a class="btn btn-danger triggerRemove" href='<spring:url value="/happynews/user/remove/${user.id }.html"/>'>remove</a>
+					<a class="btn btn-danger triggerRemove" href='<spring:url value="/happynews/users/remove/${user.id }.html"/>'>remove</a>
 			
 					</td>
 
