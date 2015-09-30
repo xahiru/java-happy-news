@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tiles-x" %>
+<%@ include file="taglib.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +20,7 @@
 <title><tiles:getAsString name="title" /></title>
 </head>
 <body>
-<tiles-x:useAttribute name="current"/>
+	<tiles-x:useAttribute name="current" />
 	<div class="container">
 		<!-- Static navbar -->
 		<nav class="navbar navbar-default">
@@ -39,13 +37,28 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="${current == 'index'? 'active':'' }"><a href='<spring:url value="/happynews/index"/>'>Home</a></li>
-						
+						<li class="${current == 'index'? 'active':'' }"><a
+							href='<spring:url value="/happynews/index"/>'>Home</a></li>
+
 						<li><a href="/">About</a></li>
-						<li class="${current == 'users'? 'active':'' }"><a href="<spring:url value="/happynews/users.html"/>">Users</a></li>
-						<li class="${current == 'register'? 'active':'' }"><a href="<spring:url value="/happynews/register.html"/>">Register</a></li>
-						<li class="${current == 'login'? 'active':'' }"><a href="<spring:url value="/happynews/login.html"/>">Login</a></li>
-						<li ><a href="<spring:url value="/logout"/>">Logout</a></li>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li class="${current == 'users'? 'active':'' }"><a
+							href="<spring:url value="/happynews/users.html"/>">Users</a></li>
+						
+						</security:authorize>
+												<li class="${current == 'register'? 'active':'' }"><a
+							href="<spring:url value="/happynews/register.html"/>">Register</a></li>
+						<security:authorize access="! isAuthenticated()">
+							<li class="${current == 'login'? 'active':'' }"><a
+								href="<spring:url value="/happynews/login.html"/>">Login</a></li>
+						</security:authorize>
+						<security:authorize access="isAuthenticated()">
+							<li class="${current == 'users'? 'active':'' }"><a
+							href="<spring:url value="/happynews/account.html"/>">My Account</a></li>
+				
+							<li><a href="<spring:url value="/logout"/>">Logout</a></li>
+						</security:authorize>
+
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="./">Default <span
@@ -60,10 +73,10 @@
 		</nav>
 		<tiles:insertAttribute name="body" />
 		<br> <br>
-		
-			<tiles:insertAttribute name="footer" />
 
-		
+		<tiles:insertAttribute name="footer" />
+
+
 	</div>
 </body>
 </html>

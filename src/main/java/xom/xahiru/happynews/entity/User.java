@@ -2,6 +2,7 @@ package xom.xahiru.happynews.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,15 +25,25 @@ public class User {
 	
 	private String password;
 	
+	private boolean enable;
+	
 	@ManyToMany
 	@JoinTable
 	private List<Role> roles;
 	
-	@OneToMany(mappedBy="user", fetch= FetchType.LAZY )
+	@OneToMany(mappedBy="user", fetch= FetchType.LAZY, cascade=CascadeType.REMOVE )
 	private List<Blog> blogs;
 	
 	
 	
+
+	public boolean isEnable() {
+		return enable;
+	}
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
 
 	public List<Blog> getBlogs() {
 		return blogs;

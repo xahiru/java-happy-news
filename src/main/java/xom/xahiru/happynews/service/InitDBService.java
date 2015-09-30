@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import xom.xahiru.happynews.entity.Blog;
@@ -51,7 +52,11 @@ public class InitDBService {
 		roles.add(adminRole);
 		roles.add(userRole);
 		userAdmin.setRoles(roles);
-		userAdmin.setName("adminUser");
+		userAdmin.setName("admin");
+		userAdmin.setEnable(true);
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
+		userAdmin.setPassword(passwordEncoder.encode("admin"));
 		userRepository.save(userAdmin);
 		
 		Blog javavidsBlog = new Blog();
